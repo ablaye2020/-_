@@ -40,8 +40,8 @@
             top: -20%;
             left: -20%;
             object-fit: cover;
-            opacity: 0.55;
-            filter: blur(0.5px) brightness(0.7) saturate(1.4);
+            opacity: 0.8;
+            filter: blur(0.3px) brightness(0.9) saturate(1.3);
             animation: bgDrift 35s infinite alternate ease-in-out;
         }
 
@@ -57,22 +57,22 @@
         .red-overlay {
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(180, 0, 0, 0.15), rgba(0, 0, 0, 0.4) 70%);
+            background: radial-gradient(circle at 30% 40%, rgba(180, 0, 0, 0.08), rgba(0, 0, 0, 0.2) 70%);
             mix-blend-mode: multiply;
             animation: pulseOverlay 10s infinite alternate ease-in-out;
         }
 
         @keyframes pulseOverlay {
-            0% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-            100% { opacity: 0.3; }
+            0% { opacity: 0.2; }
+            50% { opacity: 0.4; }
+            100% { opacity: 0.2; }
         }
 
         .orb {
             position: absolute;
             border-radius: 50%;
             filter: blur(80px);
-            opacity: 0.2;
+            opacity: 0.12;
             animation: orbMove 22s infinite alternate ease-in-out;
         }
 
@@ -101,7 +101,7 @@
             left: 60%;
             animation-duration: 20s;
             animation-delay: -8s;
-            opacity: 0.1;
+            opacity: 0.06;
         }
         .orb:nth-child(4) {
             width: 400px;
@@ -111,7 +111,7 @@
             right: 20%;
             animation-duration: 24s;
             animation-delay: -12s;
-            opacity: 0.15;
+            opacity: 0.08;
         }
 
         @keyframes orbMove {
@@ -124,8 +124,8 @@
 
         .moving-line {
             position: absolute;
-            background: rgba(255, 30, 30, 0.06);
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.03);
+            background: rgba(255, 30, 30, 0.04);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.02);
             pointer-events: none;
         }
 
@@ -187,15 +187,15 @@
             height: 3px;
             border-radius: 50%;
             background: #ff3333;
-            box-shadow: 0 0 15px #ff0000, 0 0 35px rgba(255, 0, 0, 0.15);
+            box-shadow: 0 0 15px #ff0000, 0 0 35px rgba(255, 0, 0, 0.1);
             opacity: 0;
             animation: particleFloat linear infinite;
         }
 
         @keyframes particleFloat {
             0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
-            10% { opacity: 0.7; }
-            90% { opacity: 0.7; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
             100% { transform: translate(var(--tx), var(--ty)) scale(1.3); opacity: 0; }
         }
 
@@ -207,7 +207,7 @@
         #access-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(8, 0, 0, 0.75);
+            background: rgba(8, 0, 0, 0.7);
             backdrop-filter: blur(4px);
             z-index: 1000;
             display: flex;
@@ -308,8 +308,8 @@
             object-fit: cover;
             border-radius: 16px;
             margin-bottom: 16px;
-            opacity: 0.85;
-            box-shadow: 0 0 60px rgba(255, 0, 0, 0.08);
+            opacity: 0.9;
+            box-shadow: 0 0 60px rgba(255, 0, 0, 0.05);
         }
 
         .main-logo {
@@ -356,7 +356,7 @@
         }
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            background: rgba(0, 0, 0, 0.35);
+            background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 12px;
             padding: 10px 16px;
@@ -370,7 +370,7 @@
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             border-color: rgba(255, 50, 50, 0.3);
             box-shadow: 0 0 40px rgba(255, 0, 0, 0.05);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4);
         }
         .form-group select option {
             background: #111;
@@ -382,7 +382,7 @@
         }
 
         .generated-box {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.25);
             border: 1px solid rgba(255, 0, 0, 0.08);
             border-radius: 16px;
             padding: 16px 18px;
@@ -620,17 +620,17 @@
         <div class="main-sub">⚡ Signal Generator ⚡</div>
 
         <div class="form-group">
-            <label>👤 Name / Username of the abuser</label>
-            <input type="text" id="nom" placeholder="Ex: John DOE or @username">
+            <label>Name or username of the abuser</label>
+            <input type="text" id="nom" placeholder="e.g. John Doe or @username">
         </div>
 
         <div class="form-group">
-            <label>📱 Their WhatsApp number</label>
+            <label>Their WhatsApp number</label>
             <input type="text" id="numero" placeholder="+221 70 820 15 85">
         </div>
 
         <div class="form-group">
-            <label>⚠️ Type of violation</label>
+            <label>Type of violation</label>
             <select id="type">
                 <option value="harassment">Harassment / Bullying</option>
                 <option value="scam">Scam / Fraud</option>
@@ -644,26 +644,26 @@
         </div>
 
         <div class="form-group">
-            <label>📝 What happened ? (be specific)</label>
-            <textarea id="details" placeholder="Describe exactly what this person did, when, and how it affected you..."></textarea>
+            <label>What happened? (be specific)</label>
+            <textarea id="details" placeholder="Describe exactly what this person did, when it happened, and how it has affected you..."></textarea>
         </div>
 
         <div class="generated-box" id="generated-box">
-            <div class="msg-title">📨 GENERATING MESSAGE...</div>
+            <div class="msg-title">GENERATING MESSAGE...</div>
             <div class="msg-content" id="message-output">
                 <span class="cursor-blink"></span>
             </div>
         </div>
 
-        <div class="status-text" id="status-text">Fill the form and click GENERATE</div>
+        <div class="status-text" id="status-text">Fill in the form and click GENERATE</div>
 
         <div class="btn-group">
-            <button class="btn btn-generate" id="btn-generate" onclick="startGeneration()">⚡ GENERATE</button>
-            <button class="btn btn-copy" id="btn-copy" disabled onclick="copyMessage()">📋 COPY</button>
-            <button class="btn btn-whatsapp" id="btn-wa" disabled onclick="sendWhatsApp()">💬 WHATSAPP</button>
+            <button class="btn btn-generate" id="btn-generate" onclick="startGeneration()">GENERATE</button>
+            <button class="btn btn-copy" id="btn-copy" disabled onclick="copyMessage()">COPY</button>
+            <button class="btn btn-whatsapp" id="btn-wa" disabled onclick="sendWhatsApp()">WHATSAPP</button>
         </div>
 
-        <div class="whatsapp-note">📌 Message copied — paste in WhatsApp Support</div>
+        <div class="whatsapp-note">Message copied automatically — paste in WhatsApp Support chat</div>
 
         <div class="footer-link">
             <a href="https://ablaye2020.github.io" target="_blank">ablaye2020.github.io</a>
@@ -696,7 +696,7 @@
         // ===== PARTICLES =====
         (function createParticles() {
             const container = document.getElementById('particle-container');
-            const count = 45;
+            const count = 35;
             for (let i = 0; i < count; i++) {
                 const p = document.createElement('div');
                 p.className = 'particle';
@@ -730,7 +730,7 @@
                 error.textContent = '';
                 startMusic();
             } else {
-                error.textContent = '❌ Incorrect code';
+                error.textContent = 'Incorrect code';
                 input.value = '';
                 input.focus();
             }
@@ -740,7 +740,7 @@
             if (e.key === 'Enter') checkAccess();
         });
 
-        // ===== GENERATOR =====
+        // ===== GENERATOR - NATURAL ENGLISH MESSAGES =====
         let isGenerating = false;
         let displayText = '';
 
@@ -751,67 +751,68 @@
             const details = document.getElementById('details').value.trim();
 
             const typeLabels = {
-                harassment: "harcèlement et intimidation",
-                scam: "arnaque et fraude",
-                identity: "usurpation d'identité",
-                illegal: "contenu illégal",
-                threats: "menaces et violence",
-                impersonation: "usurpation d'identité",
-                doxxing: "doxxing / fuite d'informations privées",
-                other: "violation grave"
+                harassment: "harassment and bullying",
+                scam: "scam and fraud",
+                identity: "identity theft",
+                illegal: "illegal content",
+                threats: "threats and violence",
+                impersonation: "impersonation",
+                doxxing: "doxxing and privacy violation",
+                other: "serious violation"
             };
 
-            const typeFr = typeLabels[type] || "violation grave";
+            const typeEn = typeLabels[type] || "serious violation";
 
             let msg = '';
 
-            msg += `Bonjour l'équipe WhatsApp,\n\n`;
+            msg += `Dear WhatsApp Support Team,\n\n`;
 
-            msg += `Je vous écris pour vous signaler un cas TRÈS GRAVE concernant un utilisateur de votre plateforme. Je suis victime d'actes répétés qui mettent ma sécurité en danger et je vous demande d'agir IMMÉDIATEMENT.\n\n`;
+            msg += `I am writing to report an extremely serious situation involving one of your users. I have been the target of repeated harmful actions that are putting my safety at risk, and I am urgently asking for your help.\n\n`;
 
             if (nom) {
-                msg += `🔴 L'utilisateur concerné s'appelle : ${nom}\n`;
+                msg += `The person responsible goes by the name: ${nom}\n`;
             } else {
-                msg += `🔴 L'utilisateur concerné est inconnu (numéro ci-dessous)\n`;
+                msg += `The person responsible has not been identified by name (phone number provided below).\n`;
             }
 
             if (numero) {
-                msg += `📱 Son numéro WhatsApp : ${numero}\n`;
+                msg += `Their WhatsApp number is: ${numero}\n\n`;
             }
 
-            msg += `\n📌 CE QU'IL/ELLE A FAIT :\n`;
+            msg += `Here is what has been happening:\n`;
+
             if (details) {
                 msg += `${details}\n\n`;
             } else {
-                msg += `Cette personne m'a harcelé, menacé et a partagé des informations privées me concernant sans mon consentement. J'ai des preuves de tout cela (captures d'écran, enregistrements, messages).\n\n`;
+                msg += `This individual has been harassing me, sending threats, and sharing private information about me without my consent. I have documented everything with screenshots, recordings, and message logs.\n\n`;
             }
 
-            msg += `⚠️ TYPE DE VIOLATION : ${typeFr.toUpperCase()}\n\n`;
+            msg += `The nature of this violation is: ${typeEn.toUpperCase()}\n\n`;
 
-            msg += `Cela fait maintenant plusieurs jours/semaines que ça dure et je suis épuisé(e). Cette personne utilise votre plateforme pour m'attaquer et je ne me sens plus en sécurité. J'ai peur pour moi et pour ma famille.\n\n`;
+            msg += `This has been going on for days now, and I am exhausted and scared. This person is using your platform specifically to target me, and I no longer feel safe. I worry about my wellbeing and that of my family.\n\n`;
 
-            msg += `J'AI DÉJÀ :\n`;
-            msg += `→ Bloqué ce numéro mais il/elle crée de nouveaux comptes\n`;
-            msg += `→ Signalé plusieurs fois mais rien ne change\n`;
-            msg += `→ Je suis allé(e) voir la police qui m'a dit de contacter WhatsApp\n\n`;
+            msg += `I have already taken these steps:\n`;
+            msg += `- I have blocked this number, but they keep creating new accounts to contact me\n`;
+            msg += `- I have reported this several times, but nothing has changed\n`;
+            msg += `- I have even gone to the police, and they advised me to contact WhatsApp directly\n\n`;
 
-            msg += `CE QUE JE DEMANDE :\n`;
-            msg += `→ BANNIR DÉFINITIVEMENT ce compte et cette personne de WhatsApp\n`;
-            msg += `→ CONSERVER TOUS LES ÉCHANGES pour que la police puisse enquêter\n`;
-            msg += `→ ME RÉPONDRE RAPIDEMENT avec des actions concrètes\n\n`;
+            msg += `What I need from you:\n`;
+            msg += `- Permanently ban this account and this person from WhatsApp\n`;
+            msg += `- Preserve all chat logs so the police can investigate properly\n`;
+            msg += `- Respond to me quickly with concrete actions you are taking\n\n`;
 
-            msg += `Je vous en supplie, prenez ce signalement au sérieux. Je ne sais plus quoi faire. Cette personne continue à me harceler et je n'ai plus de paix.\n\n`;
+            msg += `Please take this report seriously. I have tried everything and I do not know what else to do. This person continues to harass me and I cannot find peace.\n\n`;
 
-            msg += `J'ai TOUTES LES PREUVES et je suis prêt(e) à les partager avec vous ou avec la police.\n\n`;
+            msg += `I have all the evidence and I am ready to share it with you or with law enforcement.\n\n`;
 
-            msg += `S'il vous plaît, ne me répondez pas avec un message automatique. J'ai besoin d'un être humain qui va vraiment prendre mon cas en main.\n\n`;
+            msg += `Please do not reply with an automated message. I need a real person to look into my case and take meaningful action.\n\n`;
 
-            msg += `Dans l'attente de votre retour,\n\n`;
+            msg += `I look forward to your response,\n\n`;
 
             if (nom) {
-                msg += `Cordialement,\nUne victime de ${nom}`;
+                msg += `A victim of ${nom}`;
             } else {
-                msg += `Cordialement,\nUne victime qui a besoin d'aide`;
+                msg += `A victim in need of help`;
             }
 
             return msg;
@@ -831,7 +832,7 @@
             btnGen.disabled = true;
             btnCopy.disabled = true;
             btnWa.disabled = true;
-            status.textContent = '⏳ Génération du message...';
+            status.textContent = 'Generating message...';
             output.textContent = '';
             box.classList.add('visible');
 
@@ -852,8 +853,8 @@
                     btnGen.disabled = false;
                     btnCopy.disabled = false;
                     btnWa.disabled = false;
-                    status.textContent = '✅ Message prêt — TRÈS CONVAINCANT';
-                    showToast('✅ Message puissant généré');
+                    status.textContent = 'Message ready — very compelling';
+                    showToast('Powerful message generated');
                 }
             }
 
@@ -862,9 +863,9 @@
 
         function copyMessage() {
             const text = document.getElementById('message-output').textContent;
-            if (!text) return showToast('❌ Générez un message d\'abord');
+            if (!text) return showToast('Please generate a message first');
             navigator.clipboard.writeText(text).then(() => {
-                showToast('📋 Copié dans le presse-papiers');
+                showToast('Copied to clipboard');
             }).catch(() => {
                 const area = document.createElement('textarea');
                 area.value = text;
@@ -872,16 +873,16 @@
                 area.select();
                 document.execCommand('copy');
                 area.remove();
-                showToast('📋 Copié');
+                showToast('Copied');
             });
         }
 
         function sendWhatsApp() {
             const text = document.getElementById('message-output').textContent;
-            if (!text) return showToast('❌ Générez un message d\'abord');
+            if (!text) return showToast('Please generate a message first');
 
             navigator.clipboard.writeText(text).then(() => {
-                showToast('📋 Message copié ! Ouverture WhatsApp...');
+                showToast('Message copied! Opening WhatsApp...');
             }).catch(() => {
                 const area = document.createElement('textarea');
                 area.value = text;
@@ -889,7 +890,7 @@
                 area.select();
                 document.execCommand('copy');
                 area.remove();
-                showToast('📋 Message copié ! Ouverture WhatsApp...');
+                showToast('Message copied! Opening WhatsApp...');
             });
 
             setTimeout(() => {
@@ -908,7 +909,7 @@
         window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('generated-box').classList.remove('visible');
             document.getElementById('message-output').textContent = '';
-            document.getElementById('status-text').textContent = 'Remplissez le formulaire et cliquez sur GENERATE';
+            document.getElementById('status-text').textContent = 'Fill in the form and click GENERATE';
         });
     </script>
 
